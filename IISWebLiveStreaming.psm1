@@ -290,3 +290,6 @@ function get-IISWebLiveStreamingPublishingPointStatus
     }
 
 }
+
+
+Export-ModuleMember -Function get-IISWebLiveStreamingPublishingPointStatus, get-IISWebLiveStreamingPublishingPoint,set-IISWebLiveStreamingPublishingPoint
