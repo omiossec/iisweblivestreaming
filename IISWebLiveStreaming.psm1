@@ -176,8 +176,9 @@ function get-IISWebLiveStreamingPublishingPoint
                                 $PointInfos | Add-Member -MemberType NoteProperty  -Name "Streams" -Value $point.Attributes["streams"].Value.ToString()
                                 $PointInfos | Add-Member -MemberType NoteProperty  -Name "Fragments" -Value $point.Attributes["fragments"].Value.ToString()
                                 $PointInfos | Add-Member -MemberType NoteProperty  -Name "LastError" -Value $point.Attributes["lasterror"].Value.ToString()
-                                $PointInfos | Add-Member -MemberType NoteProperty -Name "LastError" -Value $point.Attributes["lasterror"].Value.ToString()
+                                
                                 $stateString = Convert-IISWebLiveStreamingStatus -state $point.Attributes["state"].Value.ToString()
+                                $PointInfos | Add-Member -MemberType NoteProperty -Name "State" -Value $stateString 
                                 $arrPublishPointsInfos.Add($PointInfos)
                     }
 
